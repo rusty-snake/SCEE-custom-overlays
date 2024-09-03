@@ -36,11 +36,7 @@ ToC
 >
 > We really need a full-featured overlay for this. Hopefully we get it soon. (streetcomplete/StreetComplete#5486)
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 highway
@@ -53,11 +49,7 @@ or smoothness
 - [x] ways
 - [ ] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 !smoothness
@@ -79,11 +71,7 @@ or (smoothness = intermediate and surface ~ unpaved|rock|ground|dirt|earth|mud|s
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 sidewalk:both = yes
@@ -96,11 +84,7 @@ or sidewalk ~ both|left|right
 - [x] ways
 - [ ] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 sidewalk(:both|:left|:right)?:surface
@@ -121,11 +105,7 @@ sidewalk(:both|:left|:right)?:surface
 > See, review, edit and maintain the `highway` type of lines.
 > - Dash-filter is used to show `oneway`.
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 highway
@@ -135,11 +115,7 @@ highway
 - [x] ways
 - [ ] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 highway|service|footway
@@ -157,11 +133,7 @@ oneway and oneway != no
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 highway = footway
@@ -172,11 +144,7 @@ and bicyle = designated
 - [x] ways
 - [ ] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 
@@ -197,11 +165,7 @@ and bicyle = designated
 > See, review, edit and maintain the `highway` nodes like crossings and other highway related nodes.
 > - `bus_stop`s are not selected.
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 highway
@@ -214,11 +178,7 @@ or traffic_calming
 - [ ] ways
 - [ ] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 highway|crossing.*|noexit
@@ -236,11 +196,7 @@ highway|crossing.*|noexit
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 ~highway|cycleway|footway ~ crossing
@@ -250,11 +206,7 @@ highway|crossing.*|noexit
 - [x] ways
 - [x] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 crossing.*
@@ -277,11 +229,7 @@ crossing.*
 > - Dash-filter is used for QA checks on the `surface`.
 
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 highway=track
@@ -291,11 +239,7 @@ highway=track
 - [x] ways
 - [ ] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 !tracktype
@@ -322,11 +266,7 @@ and (
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 (highway and highway !~ bus_stop|street_lamp|give_way)
@@ -337,11 +277,7 @@ or barrier ~ block|bollard|coupure|cycle_barrier|entrance|gate|lift_gate|sliding
 - [x] ways
 - [x] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 (oneway:)?(access|foot|dog|ski|inline_skates|horse|portage|vehicle|bicycle|electric_bicycle|mtb|kick_scooter|wheelchair|carriage|cycle_rickshaw|hand_cart|trailer|caravan|motor_vehicle|motorcycle|moped|speed_pedelec|mofa|small_electric_vehicle|motorcar|motorhome|tourist_bus|coach|goods|hgv|hgv_articulated|bdouble|agricultural|auto_rickshaw|nev|golf_cart|microcar|atv|ohv|snowmobile|psv|bus|taxi|minibus|share_taxi|hov|carpool|car_sharing|emergency|hazmat|hazmat:water|school_bus|disabled)?(:forward|:backward)?(:conditional)?
@@ -359,11 +295,7 @@ or barrier ~ block|bollard|coupure|cycle_barrier|entrance|gate|lift_gate|sliding
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 (access and access != private and !amenity and !leisure)
@@ -375,11 +307,7 @@ or bicycle = permissive
 - [x] ways
 - [x] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 
@@ -397,11 +325,7 @@ or bicycle = permissive
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 traffic_sign
@@ -412,11 +336,7 @@ or (highway and highway !~ crossing|traffic_signals|bus_stop)
 - [x] ways
 - [ ] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 !traffic_sign
@@ -434,11 +354,7 @@ or (highway and highway !~ crossing|traffic_signals|bus_stop)
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 barrier ~ block|bollard|coupure|cycle_barrier|entrance|gate|lift_gate|sliding_gate|swing_gate|chain
@@ -448,11 +364,7 @@ barrier ~ block|bollard|coupure|cycle_barrier|entrance|gate|lift_gate|sliding_ga
 - [x] ways
 - [ ] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 barrier|bollard|cycle_barrier|locked|.*_gate.*
@@ -470,11 +382,7 @@ barrier|bollard|cycle_barrier|locked|.*_gate.*
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 traffic_calming
@@ -484,11 +392,7 @@ traffic_calming
 - [ ] ways
 - [ ] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 traffic_calming
@@ -506,11 +410,7 @@ traffic_calming
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 highway ~ motorway|trunk|primary|secondary|tertiary|unclassified|residential|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|service|track|bus_guideway|escape|raceway|road|busway
@@ -523,11 +423,7 @@ or highway and ~maxspeed.*
 - [x] ways
 - [ ] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 (source:|zone:)?maxspeed.*
@@ -545,11 +441,7 @@ or highway and ~maxspeed.*
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 highway ~ motorway|trunk|primary|secondary|tertiary|unclassified|residential|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|living_street|service|pedestrian|track|bus_guideway|escape|raceway|road|busway
@@ -559,11 +451,7 @@ highway ~ motorway|trunk|primary|secondary|tertiary|unclassified|residential|mot
 - [x] ways
 - [ ] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 lane_markings|(.*:)?lanes(:forward|:backward)?
@@ -581,11 +469,7 @@ lane_markings|(.*:)?lanes(:forward|:backward)?
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 !zögelfrex
@@ -597,11 +481,7 @@ lane_markings|(.*:)?lanes(:forward|:backward)?
 - [ ] ways
 - [ ] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 .*
@@ -619,11 +499,7 @@ lane_markings|(.*:)?lanes(:forward|:backward)?
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 (landuse and landuse !~ residential)
@@ -634,11 +510,7 @@ or natural
 - [x] ways
 - [x] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 landuse|natural
@@ -656,11 +528,7 @@ landuse|natural
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 leisure
@@ -670,11 +538,7 @@ leisure
 - [x] ways
 - [x] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 leisure
@@ -695,11 +559,7 @@ leisure
 
 > Everything with a `name` tag.
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 name
@@ -709,11 +569,7 @@ name
 - [x] ways
 - [x] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 name
@@ -731,11 +587,7 @@ name
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 building
@@ -745,11 +597,7 @@ building
 - [x] ways
 - [x] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 roof:shape
@@ -768,11 +616,7 @@ roof:shape
 
 <details><summary>Expand</summary>
 
-</details>
-
 ### Filtering details
-
-<details><summary>Expand</summary>
 
 ```
 building
@@ -782,11 +626,7 @@ building
 - [x] ways
 - [x] relations
 
-</details>
-
 ### Coloring details
-
-<details><summary>Expand</summary>
 
 ```
 .*:levels
