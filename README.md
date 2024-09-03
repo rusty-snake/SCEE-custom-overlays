@@ -27,14 +27,14 @@ ToC
 
 ## Smoothness
 
-<details><summary>Expand</summary>
+See, review, edit and maintain road `smoothness`.
+- `highway`s that are `service=driveway`, `service=slipway`, `access=private` or `access=no` are not selected unless they have an existing `smoothness` tag.
+- Dash-filter is used for QA checks on the `surface`.
+- Keep in mind that there are other surface tags such as `cycleway:surface` and `footway:surface` that are not evaluated by this overlay.
+- Tip: Create a "Smoothness" preset for use with this overlay.
+- Smoothness overlay request: streetcomplete/StreetComplete#5486
 
-> See, review, edit and maintain road `smoothness`.
-> - `highway`s that are `service=driveway`, `service=slipway`, `access=private` or `access=no` are not selected unless they have an existing `smoothness` tag.
-> - Dash-filter is used for QA checks on the `surface`.
-> - Remember `cycleway:surface` and `footway:surface` tags on `segregated=yes` paths.
->
-> We really need a full-featured overlay for this. Hopefully we get it soon. (streetcomplete/StreetComplete#5486)
+<details><summary>Expand</summary>
 
 ### Filtering details
 
@@ -67,167 +67,13 @@ or (smoothness = intermediate and surface ~ unpaved|rock|ground|dirt|earth|mud|s
 
 </details>
 
-## Sidewalk surface
-
-<details><summary>Expand</summary>
-
-### Filtering details
-
-```
-sidewalk:both = yes
-or sidewalk:left = yes
-or sidewalk:right = yes
-or sidewalk ~ both|left|right
-```
-
-- [ ] nodes
-- [x] ways
-- [ ] relations
-
-### Coloring details
-
-```
-sidewalk(:both|:left|:right)?:surface
-```
-
-- Highlight missing data: Yes
-
-```
-
-```
-
-</details>
-
-## Highway
-
-<details><summary>Expand</summary>
-
-> See, review, edit and maintain the `highway` type of lines.
-> - Dash-filter is used to show `oneway`.
-
-### Filtering details
-
-```
-highway
-```
-
-- [ ] nodes
-- [x] ways
-- [ ] relations
-
-### Coloring details
-
-```
-highway|service|footway
-```
-
-- Highlight missing data: No
-
-```
-oneway and oneway != no
-```
-
-</details>
-
-## Suspicious highway
-
-<details><summary>Expand</summary>
-
-### Filtering details
-
-```
-highway = footway
-and bicyle = designated
-```
-
-- [ ] nodes
-- [x] ways
-- [ ] relations
-
-### Coloring details
-
-```
-
-```
-
-- Highlight missing data: Yes
-
-```
-
-```
-
-</details>
-
-## Highway nodes
-
-<details><summary>Expand</summary>
-
-> See, review, edit and maintain the `highway` nodes like crossings and other highway related nodes.
-> - `bus_stop`s are not selected.
-
-### Filtering details
-
-```
-highway
-and highway !~ bus_stop|street_lamp
-or noexit = yes
-or traffic_calming
-```
-
-- [x] nodes
-- [ ] ways
-- [ ] relations
-
-### Coloring details
-
-```
-highway|crossing.*|noexit
-```
-
-- Highlight missing data: No
-
-```
-
-```
-
-</details>
-
-## Crossing
-
-<details><summary>Expand</summary>
-
-### Filtering details
-
-```
-~highway|cycleway|footway ~ crossing
-```
-
-- [x] nodes
-- [x] ways
-- [x] relations
-
-### Coloring details
-
-```
-crossing.*
-```
-
-- Highlight missing data: Yes
-
-```
-
-```
-
-</details>
-
 ## Tracktype
 
+See, review, edit and maintain the `tracktype` of tracks.
+- All `highway=track` are selected.
+- Dash-filter is used for QA checks on the `surface`.
+
 <details><summary>Expand</summary>
-
-> See, review, edit and maintain the `tracktype` of tracks.
-> - All `highway=track` are selected.
-> - Dash-filter is used for QA checks on the `surface`.
-
 
 ### Filtering details
 
@@ -262,7 +108,170 @@ and (
 
 </details>
 
+
+## Sidewalk surface
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+sidewalk:both = yes
+or sidewalk:left = yes
+or sidewalk:right = yes
+or sidewalk ~ both|left|right
+```
+
+- [ ] nodes
+- [x] ways
+- [ ] relations
+
+### Coloring details
+
+```
+sidewalk(:both|:left|:right)?:surface
+```
+
+- Highlight missing data: Yes
+
+```
+
+```
+
+</details>
+
+## Highway
+
+See, review, edit and maintain the `highway` type of ways.
+- service type and footway type are colored as well. cycleway type is not colored because the same key is used for tagging cycleways on streets.
+- Dash-filter is used to show `oneway`.
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+highway
+```
+
+- [ ] nodes
+- [x] ways
+- [ ] relations
+
+### Coloring details
+
+```
+highway|service|footway
+```
+
+- Highlight missing data: No
+
+```
+oneway and oneway != no
+```
+
+</details>
+
+## Suspicious highway
+
+Find suspicious highways
+- footways with `bicycle=designated` may be better tagged as `highway=path`.
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+highway = footway and bicycle = designated
+```
+
+- [ ] nodes
+- [x] ways
+- [ ] relations
+
+### Coloring details
+
+```
+
+```
+
+- Highlight missing data: Yes
+
+```
+
+```
+
+</details>
+
+## Highway nodes
+
+See, review, edit and maintain the `highway` nodes like crossings or truning circles and other highway related nodes.
+- `bus_stop`s and `street_lamp`s are not selected.
+- `noexit=yes` is selected.
+- `traffic_calming` is selected.
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+highway
+and highway !~ bus_stop|street_lamp
+or noexit = yes
+or traffic_calming
+```
+
+- [x] nodes
+- [ ] ways
+- [ ] relations
+
+### Coloring details
+
+```
+highway|crossing.*|noexit|traffic_calming
+```
+
+- Highlight missing data: No
+
+```
+
+```
+
+</details>
+
+## Crossing
+
+See, review, edit and maintain `crossing`s.
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+~highway|cycleway|footway ~ crossing
+```
+
+- [x] nodes
+- [x] ways
+- [ ] relations
+
+### Coloring details
+
+```
+crossing.*
+```
+
+- Highlight missing data: Yes
+
+```
+
+```
+
+</details>
+
 ## access
+
+See, review, edit and maintain `access` tags.
 
 <details><summary>Expand</summary>
 
@@ -280,7 +289,7 @@ or barrier ~ block|bollard|coupure|cycle_barrier|entrance|gate|lift_gate|sliding
 ### Coloring details
 
 ```
-(oneway:)?(access|foot|dog|ski|inline_skates|horse|portage|vehicle|bicycle|electric_bicycle|mtb|kick_scooter|wheelchair|carriage|cycle_rickshaw|hand_cart|trailer|caravan|motor_vehicle|motorcycle|moped|speed_pedelec|mofa|small_electric_vehicle|motorcar|motorhome|tourist_bus|coach|goods|hgv|hgv_articulated|bdouble|agricultural|auto_rickshaw|nev|golf_cart|microcar|atv|ohv|snowmobile|psv|bus|taxi|minibus|share_taxi|hov|carpool|car_sharing|emergency|hazmat|hazmat:water|school_bus|disabled)?(:forward|:backward)?(:conditional)?
+(oneway:)?(access|foot|dog|ski|inline_skates|horse|portage|vehicle|bicycle|electric_bicycle|mtb|kick_scooter|wheelchair|carriage|cycle_rickshaw|hand_cart|trailer|caravan|motor_vehicle|motorcycle|moped|speed_pedelec|mofa|small_electric_vehicle|motorcar|motorhome|tourist_bus|coach|goods|hgv|hgv_articulated|bdouble|agricultural|auto_rickshaw|nev|golf_cart|microcar|atv|ohv|snowmobile|psv|bus|taxi|minibus|share_taxi|hov|carpool|car_sharing|emergency|hazmat|hazmat:water|school_bus|disabled)(:forward|:backward)?(:conditional)?|oneway
 ```
 
 - Highlight missing data: No
@@ -292,6 +301,11 @@ or barrier ~ block|bollard|coupure|cycle_barrier|entrance|gate|lift_gate|sliding
 </details>
 
 ## Suspicious access
+
+Find suspicious access tags.
+- A plain `access` like `destination` on streets is often a misstagged `motor_vehicle=destination`/`vehicle=destination`.
+- `agricultural=yes` is often a misstagged `motor_vehicle=agricultural`.
+- `bicycle=permissive` on public footways is not the legal access.
 
 <details><summary>Expand</summary>
 
@@ -322,6 +336,8 @@ or bicycle = permissive
 </details>
 
 ## Traffic sign
+
+See, review, edit and maintain `traffic_sign`s.
 
 <details><summary>Expand</summary>
 
@@ -408,15 +424,50 @@ traffic_calming
 
 ## Maxspeed
 
+See, review, edit and maintain `maxspeed` restrictions.
+
 <details><summary>Expand</summary>
 
 ### Filtering details
 
 ```
 highway ~ motorway|trunk|primary|secondary|tertiary|unclassified|residential|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|service|track|bus_guideway|escape|raceway|road|busway
-and (service !~ driveway|parking_aisle or ~maxspeed.*)
-and (access !~ private|no or ~maxspeed.*)
-or highway and ~maxspeed.*
+and (service !~ driveway|parking_aisle or ~(source:|zone:)?maxspeed.*)
+and (access !~ private|no or ~(source:|zone:)?maxspeed.*)
+or highway and ~(source:|zone:)?maxspeed.*
+```
+
+- [ ] nodes
+- [x] ways
+- [ ] relations
+
+### Coloring details
+
+```
+(source:|zone:)?maxspeed.*
+```
+
+- Highlight missing data: Yes
+
+```
+
+```
+
+</details>
+
+## Suspicious maxspeed
+
+Find suspicious `maxspeed` restrictions.
+- `living_street`s should not have a maxspeed tagged.
+- Maxspeed restrictions on tracks and service roads are often misstagged.
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+highway = living_street and ~(source:|zone:)?maxspeed.*
+or highway ~ track|service and ~(source:|zone:)?maxspeed.*
 ```
 
 - [ ] nodes
@@ -467,6 +518,8 @@ lane_markings|(.*:)?lanes(:forward|:backward)?
 
 ## All nodes
 
+Show everythingy, very slow.
+
 <details><summary>Expand</summary>
 
 ### Filtering details
@@ -478,8 +531,8 @@ lane_markings|(.*:)?lanes(:forward|:backward)?
 <sup>If you need to show zögelfrexes, you can use `!tardis` as filter. Showing zögelfrexes and tardises at the same time isn't allowed.</sup>
 
 - [x] nodes
-- [ ] ways
-- [ ] relations
+- [x] ways
+- [x] relations
 
 ### Coloring details
 
@@ -496,6 +549,8 @@ lane_markings|(.*:)?lanes(:forward|:backward)?
 </details>
 
 ## Landuse
+
+See and review `landuse` during surveys. Geometry edits should be done later with Vespucci, iD or JSOM.
 
 <details><summary>Expand</summary>
 
@@ -526,6 +581,8 @@ landuse|natural
 
 ## Leisure
 
+See and review `leisure` during surveys. Geometry edits should be done later with Vespucci, iD or JSOM.
+
 <details><summary>Expand</summary>
 
 ### Filtering details
@@ -555,9 +612,9 @@ leisure
 
 ## Name
 
-<details><summary>Expand</summary>
+Everything with a `name` tag.
 
-> Everything with a `name` tag.
+<details><summary>Expand</summary>
 
 ### Filtering details
 
