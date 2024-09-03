@@ -7,6 +7,8 @@ ToC
 - Smoothness
 - Tracktype
 - Sidewalk surface
+- Sidewalk
+- Separate cylceway
 - Highway
 - Suspicious highway
 - Highway nodes
@@ -112,6 +114,8 @@ and (
 
 ## Sidewalk surface
 
+See, review, edit and maintain the `surface` of sidewalks tagged on streets.
+
 <details><summary>Expand</summary>
 
 ### Filtering details
@@ -131,6 +135,76 @@ or sidewalk ~ both|left|right
 
 ```
 sidewalk(:both|:left|:right)?:surface
+```
+
+- Highlight missing data: Yes
+
+```
+
+```
+
+</details>
+
+## Sidewalk
+
+See and review sidewalks.
+- In contrast to the StreetComplete Sidewalk overlay, `separate`d sidewalks are shown.
+- Dash-filter is used to show deprecated tags.
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+sidewalk
+or sidewalk:both
+or sidewalk:left
+or sidewalk:right
+or (highway ~ path|cycleway|footway and foot != no)
+```
+
+- [ ] nodes
+- [x] ways
+- [ ] relations
+
+### Coloring details
+
+```
+sidewalk(:(both|left|right))?
+```
+
+- Highlight missing data: Yes
+
+```
+sidewalk = none
+```
+
+</details>
+
+## Separate cycleways
+
+See and review `cycleway=separate` on streets.
+- In contrast to the StreetComplete cylceway overlay, `separate`d cycleways are shown.
+- Dash-filter is used to show deprecated tags.
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+~cycleway.* ~ separate
+or (highway = path and bicycle = designated)
+or (highway = cycleway)
+```
+
+- [ ] nodes
+- [x] ways
+- [ ] relations
+
+### Coloring details
+
+```
+cycleway(:(both|left|right))?
 ```
 
 - Highlight missing data: Yes
