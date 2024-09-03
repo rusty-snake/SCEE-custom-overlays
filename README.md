@@ -5,18 +5,19 @@
 ToC
 
 - Smoothness
+- Tracktype
 - Sidewalk surface
 - Highway
 - Suspicious highway
 - Highway nodes
 - Crossing
-- Tracktype
 - access
 - Suspicious access
 - Traffic sign
 - Barrier
 - Traffic calming
 - Maxspeed
+- Suspicious Maxspeed
 - Lanes
 - All nodes
 - Landuse
