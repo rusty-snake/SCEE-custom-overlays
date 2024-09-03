@@ -9,6 +9,8 @@ ToC
 - Sidewalk surface
 - Sidewalk
 - Separate cylceway
+- Cycleway
+- Path
 - Highway
 - Suspicious highway
 - Highway nodes
@@ -205,6 +207,68 @@ or (highway = cycleway)
 
 ```
 cycleway(:(both|left|right))?
+```
+
+- Highlight missing data: Yes
+
+```
+
+```
+
+</details>
+
+## Cycleway
+
+See, review, edit and maintain cycleway infrastructure.
+- Dash-filter is used to show deprecated tags.
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+highway ~ path|cycleway|footway
+or ~cycleway.*
+```
+
+- [ ] nodes
+- [x] ways
+- [ ] relations
+
+### Coloring details
+
+```
+cycleway|cycleway:(both|left|right).*|(oneway:)?(bicycle|foot|mofa|moped)(:signed)?|oneway|segregated
+```
+
+- Highlight missing data: Yes
+
+```
+cycleway ~ opposite.*
+```
+
+</details>
+
+## Path
+
+See, review, edit and maintain path like highways.
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+highway ~ path|cycleway|footway
+```
+
+- [ ] nodes
+- [x] ways
+- [ ] relations
+
+### Coloring details
+
+```
+highway|path|cycleway|footway|(oneway:)?(bicycle|foot|mofa|moped)(:signed)?|oneway|segregated
 ```
 
 - Highlight missing data: Yes
