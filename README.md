@@ -571,9 +571,9 @@ See, review, edit and maintain `maxspeed` restrictions.
 
 ```
 highway ~ motorway|trunk|primary|secondary|tertiary|unclassified|residential|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|service|track|bus_guideway|escape|raceway|road|busway
-and (service !~ driveway|parking_aisle or ~(source:|zone:)?maxspeed.*)
-and (access !~ private|no or ~(source:|zone:)?maxspeed.*)
-or highway and ~(source:|zone:)?maxspeed.*
+and service !~ driveway|parking_aisle
+and access !~ private|no
+or highway and ~maxspeed.* or ~source:maxspeed.* or ~zone:maxspeed.*
 ```
 
 - [ ] nodes
