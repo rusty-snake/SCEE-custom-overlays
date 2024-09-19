@@ -23,12 +23,13 @@ ToC
 - Maxspeed
 - Suspicious Maxspeed
 - Lanes
-- All nodes
+- All nodes / All ways / All relations
 - Landuse
 - Leisure
 - Name
 - Roof shape
 - Levels
+- Information boards
 
 ## Smoothness
 
@@ -655,7 +656,7 @@ lane_markings|(.*:)?lanes(:forward|:backward)?
 
 </details>
 
-## All nodes
+## All nodes / All ways / All relations
 
 Show everythingy, very slow.
 
@@ -829,6 +830,35 @@ building
 ```
 
 - Highlight missing data: Yes
+
+```
+
+```
+
+</details>
+
+## Information boards
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+tourism = information
+and information = board
+```
+
+- [x] nodes
+- [ ] ways
+- [ ] relations
+
+### Coloring details
+
+```
+board_type
+```
+
+- Highlight missing data: No
 
 ```
 
