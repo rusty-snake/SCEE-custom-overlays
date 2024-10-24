@@ -25,11 +25,13 @@ ToC
 - Lanes
 - All nodes / All ways / All relations
 - Landuse
+- Waterway
 - Leisure
 - Name
 - Roof shape
 - Levels
 - Information boards
+- Width
 
 ## Smoothness
 
@@ -719,6 +721,35 @@ landuse|natural
 
 </details>
 
+## Waterway
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+waterway
+or natural=water
+```
+
+- [x] nodes
+- [x] ways
+- [x] relations
+
+### Coloring details
+
+```
+wateray|natural|water
+```
+
+- Highlight missing data: Yes
+
+```
+
+```
+
+</details>
+
 ## Leisure
 
 See and review `leisure` during surveys. Geometry edits should be done later with Vespucci, iD or JSOM.
@@ -859,6 +890,34 @@ board_type
 ```
 
 - Highlight missing data: No
+
+```
+
+```
+
+</details>
+
+## Width
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+width or (highway and access !~ private|no)
+```
+
+- [ ] nodes
+- [x] ways
+- [ ] relations
+
+### Coloring details
+
+```
+width
+```
+
+- Highlight missing data: Yes
 
 ```
 
