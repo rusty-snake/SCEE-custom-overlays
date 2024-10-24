@@ -50,7 +50,7 @@ See, review, edit and maintain road `smoothness`.
 highway
 and service !~ driveway|slipway
 and access !~ private|no
-or smoothness
+or ~((sidewalk|footway|cycleway):((both|left|right):)?)?smoothness
 ```
 
 - [ ] nodes
