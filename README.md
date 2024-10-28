@@ -1,6 +1,6 @@
 # SCEE Custom Overlays
 
- A collection of custom overlays for SCEE.
+ A collection of custom overlays for [SCEE](https://github.com/Helium314/SCEE).
 
 ToC
 
