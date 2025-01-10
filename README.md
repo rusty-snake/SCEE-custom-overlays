@@ -86,7 +86,7 @@ See, review, edit and maintain the `tracktype` of tracks.
 ### Filtering details
 
 ```
-highway=track
+highway = track
 ```
 
 - [ ] nodes
@@ -105,10 +105,10 @@ highway=track
 !surface
 or tracktype and surface
 and (
-    (tracktype=grade1 and surface !~ asphalt|concrete|concrete:plates|sett|paving_stones)
-    or (tracktype=grade2 and surface !~ compacted|fine_gravel|gravel|shells|pebblestone)
-    or (tracktype=grade3 and surface ~ unpaved|ground)
-    or (tracktype=grade5 and surface !~ unpaved|fine_gravel|gravel|shells|rock|pebblestone|ground|dirt|earth|grass|mud|sand|woodchips|snow|ice|salt)
+    (tracktype = grade1 and surface !~ asphalt|concrete|concrete:plates|sett|paving_stones)
+    or (tracktype = grade2 and surface !~ compacted|fine_gravel|gravel|shells|pebblestone)
+    or (tracktype = grade3 and surface ~ unpaved|ground)
+    or (tracktype = grade5 and surface !~ unpaved|fine_gravel|gravel|shells|rock|pebblestone|ground|dirt|earth|grass|mud|sand|woodchips|snow|ice|salt)
     or (surface ~ asphalt|concrete|concrete:plates|sett|paving_stones and tracktype != grade1)
     or (surface ~ ground|dirt|earth|mud|sand and tracktype != grade5)
 )
