@@ -448,6 +448,7 @@ Find suspicious access tags.
 - A plain `access` like `destination` on streets is often a misstagged `motor_vehicle=destination`/`vehicle=destination`.
 - `agricultural=yes` is often a misstagged `motor_vehicle=agricultural`.
 - `bicycle=permissive` on public footways is not the legal access.
+- `motorcar`/`motorcycle` is often used for VZ 260 instead of `motor_vehicle`.
 
 <details><summary>Expand</summary>
 
@@ -457,6 +458,7 @@ Find suspicious access tags.
 (access and access != private and !amenity and !leisure)
 or agricultural = yes
 or bicycle = permissive
+or motorcar or motorcycle
 ```
 
 - [x] nodes
@@ -466,10 +468,10 @@ or bicycle = permissive
 ### Coloring details
 
 ```
-
+(oneway:)?(access|foot|dog|ski|inline_skates|horse|portage|vehicle|bicycle|electric_bicycle|mtb|kick_scooter|wheelchair|carriage|cycle_rickshaw|hand_cart|trailer|caravan|motor_vehicle|motorcycle|moped|speed_pedelec|mofa|small_electric_vehicle|motorcar|motorhome|tourist_bus|coach|goods|hgv|hgv_articulated|bdouble|agricultural|auto_rickshaw|nev|golf_cart|microcar|atv|ohv|snowmobile|psv|bus|taxi|minibus|share_taxi|hov|carpool|car_sharing|emergency|hazmat|hazmat:water|school_bus|disabled)(:forward|:backward)?(:conditional)?|oneway
 ```
 
-- Highlight missing data: Yes
+- Highlight missing data: No
 
 ```
 
