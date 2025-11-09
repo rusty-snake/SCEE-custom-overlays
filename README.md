@@ -489,7 +489,7 @@ See, review, edit and maintain `traffic_sign`s.
 
 ```
 traffic_sign
-or (highway and highway !~ crossing|traffic_signals|bus_stop)
+or (highway and highway !~ crossing|traffic_signals|bus_stop|turning_circle)
 ```
 
 - [x] nodes
