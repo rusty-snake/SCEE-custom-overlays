@@ -32,6 +32,8 @@ ToC
 - Levels
 - Information boards
 - Width
+- Parking
+- Bicycle parking
 
 ## Smoothness
 
@@ -917,6 +919,62 @@ width or (highway and access !~ private|no)
 
 ```
 width
+```
+
+- Highlight missing data: Yes
+
+```
+
+```
+
+</details>
+
+## Parking
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+amenity=parking
+```
+
+- [x] nodes
+- [x] ways
+- [x] relations
+
+### Coloring details
+
+```
+
+```
+
+- Highlight missing data: Yes
+
+```
+
+```
+
+</details>
+
+## Bicycle parking
+
+<details><summary>Expand</summary>
+
+### Filtering details
+
+```
+amenity=bicycle_parking
+```
+
+- [x] nodes
+- [x] ways
+- [x] relations
+
+### Coloring details
+
+```
+bicycle_parking|capacity|covered|access|fee
 ```
 
 - Highlight missing data: Yes
