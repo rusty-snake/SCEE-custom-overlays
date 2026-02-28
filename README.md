@@ -1,6 +1,6 @@
 # SCEE Custom Overlays
 
- A collection of custom overlays for [SCEE](https://github.com/Helium314/SCEE).
+A collection of custom overlays for [SCEE](https://github.com/Helium314/SCEE).
 
 ToC
 
@@ -17,9 +17,6 @@ ToC
 - Crossing
 - access
 - Suspicious access
-- Traffic sign
-- Barrier
-- Traffic calming
 - Maxspeed
 - Suspicious Maxspeed
 - Lanes
@@ -28,12 +25,8 @@ ToC
 - Waterway
 - Leisure
 - Name
-- Roof shape
-- Levels
-- Information boards
 - Width
 - Parking
-- Bicycle parking
 
 ## Smoothness
 
@@ -481,93 +474,6 @@ or motorcar or motorcycle
 
 </details>
 
-## Traffic sign
-
-See, review, edit and maintain `traffic_sign`s.
-
-<details><summary>Expand</summary>
-
-### Filtering details
-
-```
-traffic_sign
-or (highway and highway !~ crossing|traffic_signals|bus_stop|turning_circle)
-```
-
-- [x] nodes
-- [x] ways
-- [ ] relations
-
-### Coloring details
-
-```
-!traffic_sign
-```
-
-- Highlight missing data: No
-
-```
-
-```
-
-</details>
-
-## Barrier
-
-<details><summary>Expand</summary>
-
-### Filtering details
-
-```
-barrier ~ block|bollard|coupure|cycle_barrier|entrance|gate|lift_gate|sliding_gate|swing_gate|chain
-```
-
-- [x] nodes
-- [x] ways
-- [ ] relations
-
-### Coloring details
-
-```
-barrier|bollard|cycle_barrier|locked|.*_gate.*
-```
-
-- Highlight missing data: No
-
-```
-
-```
-
-</details>
-
-## Traffic calming
-
-<details><summary>Expand</summary>
-
-### Filtering details
-
-```
-traffic_calming
-```
-
-- [x] nodes
-- [ ] ways
-- [ ] relations
-
-### Coloring details
-
-```
-traffic_calming
-```
-
-- Highlight missing data: Yes
-
-```
-
-```
-
-</details>
-
 ## Maxspeed
 
 See, review, edit and maintain `maxspeed` restrictions.
@@ -815,92 +721,6 @@ name
 
 </details>
 
-## Roof shape
-
-<details><summary>Expand</summary>
-
-### Filtering details
-
-```
-building
-```
-
-- [ ] nodes
-- [x] ways
-- [x] relations
-
-### Coloring details
-
-```
-roof:shape
-```
-
-- Highlight missing data: Yes
-
-```
-
-```
-
-
-</details>
-
-## Levels
-
-<details><summary>Expand</summary>
-
-### Filtering details
-
-```
-building
-```
-
-- [ ] nodes
-- [x] ways
-- [x] relations
-
-### Coloring details
-
-```
-.*:levels
-```
-
-- Highlight missing data: Yes
-
-```
-
-```
-
-</details>
-
-## Information boards
-
-<details><summary>Expand</summary>
-
-### Filtering details
-
-```
-tourism = information
-and information = board
-```
-
-- [x] nodes
-- [ ] ways
-- [ ] relations
-
-### Coloring details
-
-```
-board_type
-```
-
-- Highlight missing data: No
-
-```
-
-```
-
-</details>
-
 ## Width
 
 <details><summary>Expand</summary>
@@ -947,34 +767,6 @@ amenity=parking
 
 ```
 
-```
-
-- Highlight missing data: Yes
-
-```
-
-```
-
-</details>
-
-## Bicycle parking
-
-<details><summary>Expand</summary>
-
-### Filtering details
-
-```
-amenity=bicycle_parking
-```
-
-- [x] nodes
-- [x] ways
-- [x] relations
-
-### Coloring details
-
-```
-bicycle_parking|capacity|covered|access|fee
 ```
 
 - Highlight missing data: Yes
