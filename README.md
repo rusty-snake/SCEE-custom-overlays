@@ -346,6 +346,7 @@ See, review, edit and maintain the `highway` nodes like crossings or truning cir
 - `bus_stop`s and `street_lamp`s are not selected.
 - `noexit=yes` is selected.
 - `traffic_calming` is selected.
+- `barrier` is selected.
 
 <details><summary>Expand</summary>
 
@@ -356,6 +357,7 @@ highway
 and highway !~ bus_stop|street_lamp
 or noexit = yes
 or traffic_calming
+or barrier
 ```
 
 - [x] nodes
